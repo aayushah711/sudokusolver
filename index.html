@@ -1,0 +1,287 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sudoku Solver</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1 class="text-center my-5">Sudoku Solver</h1>
+  <div class="container my-5">
+      <div class="row">
+          <div class="col-12 col-md-9 d-flex justify-content-center ">
+          <!-- <table style="border-collapse: collapse;">
+              <thead></thead>
+                  <tbody>
+                      <tr>
+                          <td class="thick-border">
+                              <table>
+                                  <thead></thead>
+                                  <tbody >
+                                    <tr>
+                                      <td>1</td>
+                                      <td>2</td>
+                                      <td>3</td>
+                                    </tr>
+                                    <tr>
+                                      <td>1</td>
+                                      <td>2</td>
+                                      <td>3</td>
+                                    </tr>
+                                    <tr>
+                                      <td>1</td>
+                                      <td>2</td>
+                                      <td>3</td>
+                                    </tr>
+                                  </tbody>
+                              </table>
+                          </td>
+                          <td class="thick-border">
+                              <table>
+                                  <thead></thead>
+                                  <tbody >
+                                    <tr>
+                                      <td>1</td>
+                                      <td>2</td>
+                                      <td>3</td>
+                                    </tr>
+                                    <tr>
+                                      <td>1</td>
+                                      <td>2</td>
+                                      <td>3</td>
+                                    </tr>
+                                    <tr>
+                                      <td>1</td>
+                                      <td>2</td>
+                                      <td>3</td>
+                                    </tr>
+                                  </tbody>
+                              </table>
+                          </td>
+                          <td class="thick-border">
+                              <table>
+                                  <thead></thead>
+                                  <tbody >
+                                    <tr>
+                                      <td>1</td>
+                                      <td>2</td>
+                                      <td>3</td>
+                                    </tr>
+                                    <tr>
+                                      <td>1</td>
+                                      <td>2</td>
+                                      <td>3</td>
+                                    </tr>
+                                    <tr>
+                                      <td>1</td>
+                                      <td>2</td>
+                                      <td>3</td>
+                                    </tr>
+                                  </tbody>
+                              </table>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td class="thick-border">
+                              <table>
+                                  <thead></thead>
+                                  <tbody >
+                                    <tr>
+                                      <td>1</td>
+                                      <td>2</td>
+                                      <td>3</td>
+                                    </tr>
+                                    <tr>
+                                      <td>1</td>
+                                      <td>2</td>
+                                      <td>3</td>
+                                    </tr>
+                                    <tr>
+                                      <td>1</td>
+                                      <td>2</td>
+                                      <td>3</td>
+                                    </tr>
+                                  </tbody>
+                              </table>
+                          </td>
+                          <td class="thick-border">
+                              <table>
+                                  <thead></thead>
+                                  <tbody >
+                                    <tr>
+                                      <td>1</td>
+                                      <td>2</td>
+                                      <td>3</td>
+                                    </tr>
+                                    <tr>
+                                      <td>1</td>
+                                      <td>2</td>
+                                      <td>3</td>
+                                    </tr>
+                                    <tr>
+                                      <td>1</td>
+                                      <td>2</td>
+                                      <td>3</td>
+                                    </tr>
+                                  </tbody>
+                              </table>
+                          </td>
+                          <td class="thick-border">
+                              <table>
+                                  <thead></thead>
+                                  <tbody >
+                                    <tr>
+                                      <td>1</td>
+                                      <td>2</td>
+                                      <td>3</td>
+                                    </tr>
+                                    <tr>
+                                      <td>1</td>
+                                      <td>2</td>
+                                      <td>3</td>
+                                    </tr>
+                                    <tr>
+                                      <td>1</td>
+                                      <td>2</td>
+                                      <td>3</td>
+                                    </tr>
+                                  </tbody>
+                              </table>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td class="thick-border">
+                              <table>
+                                  <thead></thead>
+                                  <tbody >
+                                    <tr>
+                                      <td>1</td>
+                                      <td>2</td>
+                                      <td>3</td>
+                                    </tr>
+                                    <tr>
+                                      <td>1</td>
+                                      <td>2</td>
+                                      <td>3</td>
+                                    </tr>
+                                    <tr>
+                                      <td>1</td>
+                                      <td>2</td>
+                                      <td>3</td>
+                                    </tr>
+                                  </tbody>
+                              </table>
+                          </td>
+                          <td class="thick-border">
+                              <table>
+                                  <thead></thead>
+                                  <tbody >
+                                    <tr>
+                                      <td>1</td>
+                                      <td>2</td>
+                                      <td>3</td>
+                                    </tr>
+                                    <tr>
+                                      <td>1</td>
+                                      <td>2</td>
+                                      <td>3</td>
+                                    </tr>
+                                    <tr>
+                                      <td>1</td>
+                                      <td>2</td>
+                                      <td>3</td>
+                                    </tr>
+                                  </tbody>
+                              </table>
+                          </td>
+                          <td class="thick-border">
+                              <table>
+                                  <thead></thead>
+                                  <tbody >
+                                    <tr>
+                                      <td>1</td>
+                                      <td>2</td>
+                                      <td>3</td>
+                                    </tr>
+                                    <tr>
+                                      <td>1</td>
+                                      <td>2</td>
+                                      <td>3</td>
+                                    </tr>
+                                    <tr>
+                                      <td>1</td>
+                                      <td>2</td>
+                                      <td>3</td>
+                                    </tr>
+                                  </tbody>
+                              </table>
+                          </td>
+                        </tr>
+                  </tbody>
+              </table> -->
+          <!-- <table>
+            <thead></thead>
+            <tbody>
+              <tr>
+                <td class="border-right border-bottom">1</td>
+                <td class="border-right border-bottom">2</td>
+                <td class=" border-bottom">3</td>
+                <td>1</td>
+                <td>2</td>
+                <td>3</td>
+                <td>1</td>
+                <td>2</td>
+                <td>3</td>
+              </tr>
+              <tr>
+                <td>1</td>
+                <td>2</td>
+                <td>3</td>
+                <td>1</td>
+                <td>2</td>
+                <td>3</td>
+                <td>1</td>
+                <td>2</td>
+                <td>3</td>
+              </tr>
+        </tbody>
+          </table> -->
+          <!-- Spent 4 hrs to make the borders bold... finally copied it from http://jsfiddle.net/plinuxke/j6t5c/ -->
+          <table>
+            <colgroup><col><col><col>
+            <colgroup><col><col><col>
+            <colgroup><col><col><col>
+            <tbody>
+              <tr> <td>  <td>  <td>  <td>  <td>  <td>  <td>  <td>  <td>  
+              <tr> <td>  <td>  <td>  <td>  <td>  <td>  <td>  <td>  <td>  
+              <tr> <td>  <td>  <td>  <td>  <td>  <td>  <td>  <td>  <td>  
+          <tbody>
+            <tr> <td>  <td>  <td>  <td>  <td>  <td>  <td>  <td>  <td>  
+            <tr> <td>  <td>  <td>  <td>  <td>  <td>  <td>  <td>  <td>  
+            <tr> <td>  <td>  <td>  <td>  <td>  <td>  <td>  <td>  <td>  
+          <tbody>
+            <tr> <td>  <td>  <td>  <td>  <td>  <td>  <td>  <td>  <td>  
+            <tr> <td>  <td>  <td>  <td>  <td>  <td>  <td>  <td>  <td>  
+            <tr> <td>  <td>  <td>  <td>  <td>  <td>  <td>  <td>  <td>  
+  
+          </table>
+          </div>
+
+
+
+          <div class="col-12 col-md-3">
+              <form>
+                  <div class="form-group">
+                    <label for="problem">Input problem</label>
+                    <textarea class="form-control" id="problem" rows="9" placeholder=""></textarea>
+                  </div>
+                  <button type="submit" class="btn btn-primary" id="submit">Submit</button>
+                  <button type="submit" class="btn btn-primary" id="solve" >Solve</button>
+              </form>
+          </div>
+      </div>
+  </div>
+  <script text="type/javascript" src="script.js"></script>
+</body>
+</html>
